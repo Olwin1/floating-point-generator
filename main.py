@@ -10,7 +10,6 @@ selection = input("Please Enter What Format You Would Like Your Numbers To Be In
                   "2: 5-bit Mant (Default), 3-bit Exp\n"
                   "3: 11-bit Mant, 5-bit Exp (Half)\n"
                   "4: 24-bit Mant, 8-bit Exp (Single)\n"
-                  "5: 53-bit Mant, 11-bit Exp (Double)\n"
                   " :")
 
 # Match the user's selection to set the appropriate mantissa and exponent bit lengths
@@ -24,9 +23,6 @@ match selection:
     case "4":
         mantissa_bits = 24
         exponent_bits = 8
-    case "5":
-        mantissa_bits = 53
-        exponent_bits = 11
     case _:
         pass  # If no valid selection is made, default to 7-bit mantissa and 4-bit exponent
 
