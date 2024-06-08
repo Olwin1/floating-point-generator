@@ -5,3 +5,5 @@ This is in the format for A-Level **OCR** Computer Science I don't know what oth
 I found out the hard way that floating point numbers normally aren't actually written in two's compliment instead they're in sign & magnitude.
 
 This took me embarassingly long to make...
+
+Please use in **Python 3.10+** as it does use switch-case (match in python) which does not exist in previous versions for some reason which is truly baffling.  
