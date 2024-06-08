@@ -27,7 +27,7 @@ match selection:
     case _:
         pass  # If no valid selection is made, default to 7-bit mantissa and 4-bit exponent
 
-def twos_complement(value, bits):
+def twosComplement(value, bits):
     """Compute the two's complement of int value."""
     if value & (1 << (bits - 1)):  # If the sign bit is set
         value -= 1 << bits  # Subtract the value to get the two's complement
@@ -37,11 +37,11 @@ def generateValue(mantissa_bits, exponent_bits):
     '''Generate a random floating point number'''
     # Generate a random x-bit two's complement number for the mantissa
     mantissa = random.randint(0, (1 << mantissa_bits) - 1)
-    mantissa_twos_complement = twos_complement(mantissa, mantissa_bits)
+    mantissa_twos_complement = twosComplement(mantissa, mantissa_bits)
     
     # Generate a random y-bit two's complement number for the exponent
     exponent = random.randint(0, (1 << exponent_bits) - 1)
-    exponent_twos_complement = twos_complement(exponent, exponent_bits)
+    exponent_twos_complement = twosComplement(exponent, exponent_bits)
 
     # Calculate the floating point value
     mantissa_value = mantissa_twos_complement / (2 ** (mantissa_bits - 1))
