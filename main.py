@@ -1,7 +1,19 @@
 import random
+
+# Default settings for mantissa and exponent bit lengths
 mantissa_bits = 7
 exponent_bits = 4
-selection = input("Please Enter What Format You Would Like Your Numbers To Be In:\n1: 7-bit Mant, 4-bit Exp\n2: 5-bit Mant (Default), 3-bit Exp\n3: 11-bit Mant, 5-bit Exp (Half)\n4: 24-bit Mant, 8-bit Exp (Single), \n5: 53-bit Mant, 11-bit Exp (Double)\n :")
+
+# Prompt the user to select a format for the floating-point number
+selection = input("Please Enter What Format You Would Like Your Numbers To Be In:\n"
+                  "1: 7-bit Mant, 4-bit Exp\n"
+                  "2: 5-bit Mant (Default), 3-bit Exp\n"
+                  "3: 11-bit Mant, 5-bit Exp (Half)\n"
+                  "4: 24-bit Mant, 8-bit Exp (Single)\n"
+                  "5: 53-bit Mant, 11-bit Exp (Double)\n"
+                  " :")
+
+# Match the user's selection to set the appropriate mantissa and exponent bit lengths
 match selection:
     case "2":
         mantissa_bits = 5
@@ -16,11 +28,12 @@ match selection:
         mantissa_bits = 53
         exponent_bits = 11
     case _:
-        pass
+        pass  # If no valid selection is made, default to 7-bit mantissa and 4-bit exponent
+
 def twos_complement(value, bits):
     """Compute the two's complement of int value."""
-    if value & (1 << (bits - 1)):
-        value -= 1 << bits
+    if value & (1 << (bits - 1)):  # If the sign bit is set
+        value -= 1 << bits  # Subtract the value to get the two's complement
     return value
 
 def generateValue(mantissa_bits, exponent_bits):
@@ -43,8 +56,12 @@ def generateValue(mantissa_bits, exponent_bits):
 
 # Main Loop
 while True:
+    # Generate a random floating point value based on the current mantissa and exponent bit lengths
     mantissa_binary, exponent_binary, mantissa_twos_complement, exponent_twos_complement, floating_point_value = generateValue(mantissa_bits, exponent_bits)
+    
     # Output the values
     print(f"Two's Compliment Binary ({mantissa_bits}-bit Mantissa, {exponent_bits}-bit Exponent): {mantissa_binary} {exponent_binary}")
     print(f"Base-10 Value: {floating_point_value * 10**exponent_twos_complement}")
+    
+    # Wait for user input to generate another value
     input("Press Any Key for Another Value")
