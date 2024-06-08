@@ -7,4 +7,11 @@ So why do we have to learn a Non-Standard format? Now that's a good question. Wh
 
 This took me embarassingly long to make...
 
-Please use in **Python 3.10+** as it does use switch-case (match in python) which does not exist in previous versions for some reason which is truly baffling.  
+>Please use in **Python 3.10+** as it does use switch-case (match in python) which does not exist in previous versions for some reason which is truly baffling.  
+
+## How To Run
+This script only depends on NumPy for converting the floats into human readable strings instead of scientific notation.  To install NumPy you can ether run:
+`pip install -r requirements.txt`
+or
+`pip install numpy`
+Whichever you prefer.  

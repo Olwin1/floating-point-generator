@@ -1,4 +1,5 @@
 import random
+import numpy as np
 
 # Default settings for mantissa and exponent bit lengths
 mantissa_bits = 7
@@ -57,7 +58,7 @@ while True:
     
     # Output the values
     print(f"Two's Compliment Binary ({mantissa_bits}-bit Mantissa, {exponent_bits}-bit Exponent): {mantissa_binary} {exponent_binary}")
-    print(f"Base-10 Value: {floating_point_value * 10**exponent_twos_complement}")
+    print(f"Base-10 Value: {np.format_float_positional(floating_point_value * 10**exponent_twos_complement, trim='-')}")
     
     # Wait for user input to generate another value
     input("Press Any Key for Another Value")
