@@ -6,10 +6,10 @@ exponent_bits = 4
 
 # Prompt the user to select a format for the floating-point number
 selection = input("Please Enter What Format You Would Like Your Numbers To Be In:\n"
-                  "1: 7-bit Mant, 4-bit Exp\n"
-                  "2: 5-bit Mant (Default), 3-bit Exp\n"
-                  "3: 11-bit Mant, 5-bit Exp (Half)\n"
-                  "4: 24-bit Mant, 8-bit Exp (Single)\n"
+                  "1: 7-bit Mant, 4-bit Exp (Default)\n"
+                  "2: 5-bit Mant, 3-bit Exp\n"
+                  "3: 11-bit Mant, 5-bit Exp (Half) (Just for Fun, You'll never be asked to give this much precision)\n"
+                  "4: 24-bit Mant, 8-bit Exp (Single) (... Why) \n"
                   " :")
 
 # Match the user's selection to set the appropriate mantissa and exponent bit lengths
