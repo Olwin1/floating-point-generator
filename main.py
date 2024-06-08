@@ -58,7 +58,7 @@ while True:
     
     # Output the values
     print(f"Two's Compliment Binary ({mantissa_bits}-bit Mantissa, {exponent_bits}-bit Exponent): {mantissa_binary} {exponent_binary}")
-    print(f"Base-10 Value: {np.format_float_positional(floating_point_value * 10**exponent_twos_complement, trim='-')}")
+    print(f"Base-10 Value: {np.format_float_positional(floating_point_value, trim='-')}")
     
     # Wait for user input to generate another value
     input("Press Any Key for Another Value")
