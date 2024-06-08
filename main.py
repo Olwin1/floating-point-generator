@@ -38,18 +38,20 @@ def generateValue(mantissa_bits, exponent_bits):
     # Generate a random x-bit two's complement number for the mantissa
     mantissa = random.randint(0, (1 << mantissa_bits) - 1)
     mantissa_twos_complement = twos_complement(mantissa, mantissa_bits)
-
+    
     # Generate a random y-bit two's complement number for the exponent
     exponent = random.randint(0, (1 << exponent_bits) - 1)
     exponent_twos_complement = twos_complement(exponent, exponent_bits)
 
     # Calculate the floating point value
-    floating_point_value = mantissa_twos_complement * (2 ** exponent_twos_complement)
+    mantissa_value = mantissa_twos_complement / (2 ** (mantissa_bits - 1))
+    floating_point_value = mantissa_value * (2 ** exponent_twos_complement)
 
     # Convert to binary string with leading zeros for proper formatting
-    mantissa_binary = format(mantissa, f'{mantissa_bits:02}b')
-    exponent_binary = format(exponent, f'{exponent_bits:02}b')
-    return mantissa_binary, exponent_binary, mantissa_twos_complement, exponent_twos_complement, floating_point_value
+    mantissa_binary = format(mantissa, f'0{mantissa_bits}b')
+    exponent_binary = format(exponent, f'0{exponent_bits}b')
+    return mantissa_binary, exponent_binary, mantissa_value, exponent_twos_complement, floating_point_value
+
 
 # Main Loop
 while True:
